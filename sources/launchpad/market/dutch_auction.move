@@ -273,7 +273,7 @@ module nft_protocol::dutch_auction {
                 balance::destroy_zero(amount);
             } else {
                 // Transfer bidding coins back to bid owner
-                transfer::transfer(coin::from_balance(amount, ctx), owner);
+                transfer::public_transfer(coin::from_balance(amount, ctx), owner);
             };
         };
 
@@ -400,7 +400,7 @@ module nft_protocol::dutch_auction {
                 let owner = bid.owner;
                 refund_bid(bid, &mut wallet, &owner);
 
-                transfer::transfer(wallet, owner);
+                transfer::public_transfer(wallet, owner);
             };
 
             vector::destroy_empty(price_level);

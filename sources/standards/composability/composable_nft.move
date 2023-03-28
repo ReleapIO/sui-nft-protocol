@@ -222,7 +222,7 @@ module nft_protocol::composable_nft {
         ctx: &mut TxContext,
     ) {
         let nft = decompose<C, Parent, Child>(parent_nft, child_nft_id);
-        transfer::transfer(nft, tx_context::sender(ctx));
+        transfer::public_transfer(nft, tx_context::sender(ctx));
     }
 
     // === Assertions ===

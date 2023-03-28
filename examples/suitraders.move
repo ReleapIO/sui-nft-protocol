@@ -76,8 +76,8 @@ module nft_protocol::suitraders {
         );
 
         let listing = nft_protocol::listing::new(
-            @0xfb6f8982534d9ec059764346a67de63e01ecbf80,
-            @0xfb6f8982534d9ec059764346a67de63e01ecbf80,
+            @0x2f9205ba9d8dd07a4142c5f8cf113be7dc2507f6d4e0e82f305a64f496a0fe68,
+            @0x2f9205ba9d8dd07a4142c5f8cf113be7dc2507f6d4e0e82f305a64f496a0fe68,
             ctx,
         );
 
@@ -101,10 +101,10 @@ module nft_protocol::suitraders {
             ctx,
         );
 
-        transfer::share_object(listing);
+        transfer::public_share_object(listing);
 
-        transfer::transfer(mint_cap, tx_context::sender(ctx));
-        transfer::share_object(collection);
+        transfer::public_transfer(mint_cap, tx_context::sender(ctx));
+        transfer::public_share_object(collection);
     }
 
     /// Calculates and transfers royalties to the `RoyaltyDomain`

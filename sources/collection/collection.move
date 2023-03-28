@@ -94,7 +94,7 @@ module nft_protocol::collection {
     ) {
         let (mint_cap, collection) = create(witness, ctx);
         transfer::share_object(collection);
-        transfer::transfer(mint_cap, owner);
+        transfer::public_transfer(mint_cap, owner);
     }
 
     // === Domain Functions ===

@@ -34,7 +34,6 @@ module nft_protocol::listing {
     use sui::transfer;
     use sui::balance::{Self, Balance};
     use sui::object::{Self, ID , UID};
-    use sui::typed_id::{Self, TypedID};
     use sui::dynamic_object_field as dof;
     use sui::tx_context::{Self, TxContext};
     use sui::object_table::{Self, ObjectTable};
@@ -52,6 +51,7 @@ module nft_protocol::listing {
     use nft_protocol::proceeds::{Self, Proceeds};
     use nft_protocol::venue::{Self, Venue};
     use nft_protocol::witness::Witness as DelegatedWitness;
+    use nft_protocol::typed_id::{Self, TypedID};
 
     use originmate::object_box::{Self as obox, ObjectBox};
 
